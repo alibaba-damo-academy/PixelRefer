@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://github.com/DAMO-NLP-SG/Video-LLaMA">
+              VideoLLaMA
+            </a>
+            <a class="navbar-item" href="https://github.com/DAMO-NLP-SG/VideoLLaMA2">
+              VideoLLaMA2
+            </a>
+            <a class="navbar-item" href="https://github.com/CircleRadon/Osprey">
+              Osprey
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">VideoRefer Suite: Advancing Spatial-Temporal Object Understanding
+              with Video LLM</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://yuqianyuan.github.io/">Yuqian Yuan</a><sup><span style="color:#ed4b82;">1</span>,<span
+                    style="color:#6fbf73;">2</span></sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=kMpV724AAAAJ&hl=zh-CN">Hang Zhang</a><sup
+                  style="color:#6fbf73;">2</sup>,</span>
+              <span class="author-block">
+                <a href="https://cslwt.github.io/">Wentong Li</a><sup style="color:#ed4b82;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Jkkp8JAAAAAJ&hl=zh-CN">Zesen Cheng</a><sup
+                  style="color:#6fbf73;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cyrilsterling.github.io/">Boqiang Zhang</a><sup style="color:#6fbf73;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.sg/citations?user=6CDjuw4AAAAJ&hl=zh-CN">Long Li</a><sup><span
+                    style="color:#ed4b82;">1</span>,<span style="color:#6fbf73;">2</span></sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://lixin4ever.github.io/">Xin Li</a><sup style="color:#6fbf73;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=7LhjCn0AAAAJ&hl=en">Deli Zhao</a><sup
+                  style="color:#6fbf73;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://person.zju.edu.cn/wenqiao">Wenqiao Zhang</a><sup style="color:#ed4b82;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://person.zju.edu.cn/en/yzhuang">Yueting Zhuang</a><sup style="color:#ed4b82;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://person.zju.edu.cn/en/jkzhu">Jianke Zhu</a><sup style="color:#ed4b82;">1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://lidongbing.github.io/">Lidong Bing</a><sup style="color:#6fbf73;">2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#ed4b82;">1</sup>Zhejiang University</span>
+              <span class="author-block"><sup style="color:#6fbf73;">2</sup>DAMO Academy, Alibaba Group</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2011.12948" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Dataset(Comming soon)</span>
+                  </a>
+              </div>
+              <span class="link-block">
+                <a href="https://github.com/yunlong10/VidComposition"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">📈</p>
+                  </span>
+                  <span>Benchmark</span>
+                </a>
+              </span> 
+              <span class="link-block">
+                <a href="https://github.com/yunlong10/VidComposition"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                  </span>
+                  <span>Model</span>
+                </a>
+              </span> 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero demo">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="demo" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/demo-final.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">VideoRefer</span> can understand any object you're interested within a video. 
+          <!-- This demo integrates SAM 2 for visualization. -->
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">🔥Highlights</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this work, we revisit the design of the Video LLM for <b>finer-level video understanding</b>.
+              We contend that achieving this necessitates three essential components:
+            </p>
+            <p>
+              1. <b>Dataset.</b> Firstly, to achieve regional alignment between video content and language embeddings,
+              we meticulously curate <b>a large-scale object-text video instruction dataset</b> named <b><span
+                  class="dnerf">VideoRefer-700K</span></b>.
+            </p>
+            <p>
+              2. <b>Model.</b> Next, we introduce an effective Video LLM, named <b><span
+                  class="dnerf">VideoRefer</span></b>, that enables fine-grained perceiving,
+              reasoning and retrieval for user-defined regions at any specified timestamps. To accommodate both
+              single-frame and
+              multi-frame region inputs, we propose a versatile spatial-temporal object encoder.
+            </p>
+            <p>
+              3. <b>Benchmark.</b> Furthermore, to evaluate the regional video understanding capabilities of a Video LLM
+              comprehensively,
+              we develop a benchmark named <b><span class="dnerf">VideoRefer-Bench</span></b>, which consists of two
+              sub-benchmarks:
+              <b><span class="dnerf">VideoRefer-Bench-D</span></b>, which focuses on description generation from four
+              aspects, and
+              <b><span class="dnerf">VideoRefer-Bench-Q</span></b>, which emphasizes multiple-choice question answering
+              across five aspects.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Video Large Language Models (Video LLMs) have recently exhibited remarkable capabilities in general video
+              understanding. However, they mainly focus on holistic comprehension and struggle with capturing
+              fine-grained
+              spatial and temporal details. Besides, the lack of high-quality object-level video instruction data and a
+              comprehensive
+              benchmark further hinders their advancements. To tackle these challenges, we introduce the <b><span
+                  class="dnerf">VideoRefer Suite</span></b> to
+              empower Video LLM for finer-level spatial-temporal video understanding, i.e., enabling perception and
+              reasoning on any
+              objects throughout the video. Specially, we thoroughly develop VideoRefer Suite across three essential
+              aspects:
+              dataset, model, and benchmark. Firstly, we introduce a multi-agent data engine to meticulously curate a
+              large-
+              scale, high-quality object-level video instruction dataset, termed <b><span
+                  class="dnerf">VideoRefer-700K</span></b>. Next, we present the <b><span
+                  class="dnerf">VideoRefer</span></b>
+              model, which equips a versatile spatial-temporal object encoder to capture precise regional and sequential
+              representations. Finally, we meticulously create a VideoRefer-Bench to comprehensively assess the
+              spatial-temporal
+              understanding capability of a Video LLM, evaluating it across various aspects. Extensive experiments and
+              analyses demonstrate
+              that our VideoRefer model not only achieves promising performance on video referring benchmarks but also
+              facilitates
+              025 general video understanding capabilities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">
+      <span class="mathvista_other" style="vertical-align: middle">VideoRefer-700K Dataset</span>
+    </h1>
+    </div>
+  </section>
+              
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered ">
+        <div class="column is-full-width">
+          <div class="column is-centered ">
+            <img src="./static/images/dataset.png" class="interpolation-image" alt="Interpolate start reference image." />
+            <p class="has-text-centered">
+              We develop an automatic multi-agent data engine to create VideoRefer-700K, a large-scale and high-quality 
+              object-level video instruction-following dataset. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered m-6">
+        <div class="column is-full has-text-centered content">
+          <h2 class="title is-3">Visual samples from our VideoRefer-700 dataset</h2>
+          <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <p align="center">
+                    <b>Question: </b> Please describe the object &lt;object&gt; in the video in brief.
+                </p>
+              <div class="content has-text-centered">
+                <img src="static/images/data1.png" alt="grade-lv" width="100%"/>
+              </div>
+            </div>
+            </div>
+            <div class="box m-5">
+              <p align="center">
+                <b>Question: </b> Please describe the object &lt;object&gt; in the video in brief.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/data2.png" alt="grade-lv" width="100%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <p align="center">
+                <b>Question: </b> Please describe the object &lt;object&gt; in the video in detail.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/data3.png" alt="grade-lv" width="100%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <p align="center">
+                <b>Question: </b> Please describe the object &lt;object&gt; in the video in detail.
+              </p>
+              <div class="content has-text-centered">
+                <img src="static/images/data4.png" alt="contexts" width="100%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <!-- <p align="center">
+                <b>Question: </b> Please describe the object &lt;object&gt; in the video in detail.
+              </p> -->
+              <div class="content has-text-centered">
+                <img src="static/images/data5.png" alt="contexts" width="100%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <!-- <p align="center">
+                <b>Question: </b> Please describe the object &lt;object&gt; in the video in detail.
+              </p> -->
+              <div class="content has-text-centered">
+                <img src="static/images/data6.png" alt="contexts" width="100%"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">
+      <span class="mathvista_other" style="vertical-align: middle">VideoRefer Model</span>
+    </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered ">
+        <div class="column is-full-width">
+          <div class="column is-centered ">
+            <img src="./static/images/model.png" class="interpolation-image" alt="Interpolate start reference image." />
+            <p class="has-text-centered">
+              VideoRefer adopts a visual encoder and STC connector to encode the global scene-level visual
+              representations, a pretrained text tokenizer to capture the language embeddings,
+              and an instruction-following LLM for language decoding. To achieve video referring,
+              we present a versatile and unified spatial-temporal encoder to derive object-level representations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">
+      <span class="mathvista_other" style="vertical-align: middle">VideoRefer-Bench</span>
+    </h1>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <div class="column is-centered ">
+          <p class="has-text-centered">
+            VideoRefer-Bench assesses the models in two key areas: Description Generation, corresponding to VideoRefer-BenchD, 
+            and Multiple-choice Question-Answer, corresponding to VideoRefer-BenchQ.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="70%">
+              <source src="./static/videos/bench1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-chair-tp">
+            <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="70%">
+              <source src="./static/videos/bench2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-shiba">
+            <video poster="" id="shiba" autoplay controls muted loop playsinline height="70%">
+              <source src="./static/videos/bench3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-fullbody">
+            <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/bench4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-blueshirt">
+            <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/bench5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-mask">
+            <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/bench6.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+    <h1 class="title is-1 mathvista_other">
+      <span class="mathvista_other" style="vertical-align: middle">Main Results</span>
+    </h1>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered ">
+        <div class="column is-full-width">
+          <div class="column is-centered ">
+            <img src="./static/images/results.png" class="interpolation-image" alt="Interpolate start reference image." />
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{yuan2024videorefersuite,
+  author    = {Yuqian Yuan, Hang Zhang, Wentong Li, Zesen Cheng, Boqiang Zhang, Long Li, Xin Li, Deli Zhao, Wenqiao Zhang, Yueting Zhuang, Jianke Zhu, Lidong Bing},
+  title     = {VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM},
+  journal   = {arXiv},
+  year      = {2024},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+  
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+</body>
+
+</html>
