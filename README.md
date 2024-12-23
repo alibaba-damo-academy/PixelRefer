@@ -122,7 +122,7 @@ The training pipeline of our model is structured into four distinct stages.
     - Run `bash scripts/train/stage3.sh`.
  
 ### Evaluation
-For model evaluation, please refer to [eval](.eval/eval.md)
+For model evaluation, please refer to [eval](eval/eval.md).
 
 ## 🌏 Model Zoo
 | Model Name     | Visual Encoder | Language Decoder | # Training Frames |
