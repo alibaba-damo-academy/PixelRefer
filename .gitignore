@@ -12,9 +12,6 @@ dist
 log_dir*/
 temp*/
 
-# Data
-!**/alpaca-data-conversation.json
-
 # Editor
 .idea
 *.swp
