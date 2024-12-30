@@ -1,8 +1,3 @@
-### Quick Start
-
-1. Training Data Structure:
-
-
 
 ### Data Format
 
