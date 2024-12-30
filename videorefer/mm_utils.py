@@ -153,120 +153,6 @@ def frame_sample(duration, mode='uniform', num_frames=None, fps=None):
         raise ImportError(f'Unsupported frame sampling mode: {mode}')
 
 
-# def process_video(video_path, processor, aspect_ratio='pad', num_frames=NUM_FRAMES, image_grid=False, sample_scheme='uniform', frame_idx=None):
-#     def frame_sample(duration, mode='uniform', local_fps=None):
-#         if mode == 'uniform':
-#             # Calculate the size of each segment from which a frame will be extracted
-#             seg_size = float(duration - 1) / num_frames
-
-#             frame_ids = []
-#             for i in range(num_frames):
-#                 # Calculate the start and end indices of each segment
-#                 start = int(np.round(seg_size * i))
-#                 end = int(np.round(seg_size * (i + 1)))
-#                 # Append the middle index of the segment to the list
-#                 frame_ids.append((start + end) // 2)
-
-#             return frame_ids
-#             # NOTE: old version
-#             # return np.linspace(0, duration-1, num_frames, dtype=int)
-#         elif mode == 'fps':
-#             assert local_fps is not None
-#             segment_len = min(local_fps // NUM_FRAMES_PER_SECOND, duration)
-#             return np.arange(segment_len // 2, duration, segment_len, dtype=int)
-#         else:
-#             raise ImportError(f'Unsupported frame sampling mode: {mode}')
-
-#     if isinstance(video_path, str):
-#         if os.path.isdir(video_path):
-#             # folder
-#             video_files = os.listdir(video_path)
-#             video_files = [f for f in video_files if '.jpg' in f]
-#             video_files = sorted(video_files, key=lambda f: int(f.split('.')[0]))
-            
-#             duration = len(video_files)
-#             frame_id_list = frame_sample(duration, mode=sample_scheme)
-#             video_data = []
-#             frame_data = []
-#             for i, id in enumerate(frame_id_list):
-#                 frame = Image.open(os.path.join(video_path, video_files[id])).convert('RGB')
-#                 video_data.append(np.array(frame))
-#             for idx in frame_idx:
-#                 frame = Image.open(os.path.join(video_path, video_files[idx])).convert('RGB')
-#                 frame_data.append(np.array(frame))
-
-#         elif video_path.endswith('.gif'):
-#             video_gif = imageio.get_reader(video_path)
-#             duration, local_fps = len(video_gif), 10
-
-#             frame_id_list = frame_sample(duration, mode=sample_scheme, local_fps=local_fps)
-#             # limit the max input frames
-#             if len(frame_id_list) > MAX_FRAMES:
-#                 frame_id_list = np.linspace(0, duration-1, MAX_FRAMES, dtype=int)
-#             video_data = [frame for index, frame in enumerate(video_gif) if index in frame_id_list]
-#             frame_data = [frame for index, frame in enumerate(video_gif) if index in frame_idx]
-#         # added by lixin4ever, include the support of .webm files from sthsthv2
-#         elif video_path.endswith('.webm'):
-#             video_webm = VideoFileClip(video_path)
-#             video_frames = np.array(list(video_webm.iter_frames()))
-
-#             duration, local_fps = len(video_frames), video_webm.fps
-
-#             frame_id_list = frame_sample(duration, mode=sample_scheme, local_fps=local_fps)
-#             # limit the max input frames
-#             if len(frame_id_list) > MAX_FRAMES:
-#                 frame_id_list = np.linspace(0, duration-1, MAX_FRAMES, dtype=int)
-#             video_data = video_frames[frame_id_list]
-#             frame_data = video_frames[frame_idx]
-#         else:
-#             # NOTE: num_threads=1 is required to avoid deadlock in multiprocessing
-#             decord_vr = VideoReader(uri=video_path, ctx=cpu(0), num_threads=1) 
-#             duration, local_fps = len(decord_vr), float(decord_vr.get_avg_fps())
-        
-#             frame_id_list = frame_sample(duration, mode=sample_scheme, local_fps=local_fps)
-#             # limit the max input frames
-#             if len(frame_id_list) > MAX_FRAMES:
-#                 frame_id_list = np.linspace(0, duration-1, MAX_FRAMES, dtype=int)
-#             try:
-#                 video_data = decord_vr.get_batch(frame_id_list).numpy()
-#             except:
-#                 video_data = decord_vr.get_batch(frame_id_list).asnumpy()
-            
-#             try:
-#                 frame_data = decord_vr.get_batch(frame_idx).numpy()
-#             except:
-#                 frame_data = decord_vr.get_batch(frame_idx).asnumpy()
-
-#     elif isinstance(video_path, np.ndarray):
-#         assert len(video_path) == num_frames
-#         video_data = video_path
-#     else:
-#         raise ValueError(f"Unsupported video path type: {type(video_path)}")
-
-#     while num_frames is not None and len(video_data) < num_frames:
-#         video_data.append(Image.fromarray(np.zeros((*video_data[-1].size, 3), dtype=np.uint8)))
-
-#     # MAX_FRAMES filter
-#     video_data = video_data[:MAX_FRAMES]
-
-#     if aspect_ratio == 'pad':
-#         images = [expand2square(f, tuple(int(x*255) for x in processor.image_mean)) for f in video_data]
-#         video = processor.preprocess(images, return_tensors='pt')['pixel_values']
-
-#         frame_data = [Image.fromarray(f.numpy() if isinstance(f, torch.Tensor) else f) for f in frame_data]
-#         frame_data = [expand2square(image, tuple(int(x*255) for x in processor.image_mean)) for image in frame_data]
-#         frame_data = processor.preprocess(frame_data, return_tensors='pt')['pixel_values']
-#     else:
-#         images = [f for f in video_data]
-#         video = processor.preprocess(images, return_tensors='pt')['pixel_values']
-
-#         frame_data = [Image.fromarray(f.numpy() if isinstance(f, torch.Tensor) else f) for f in frame_data]
-#         frame_data = processor.preprocess(frame_data, return_tensors='pt')['pixel_values']
-
-#     return video, frame_data, height, width
-
-
-
 def process_video(video_path, processor, s=None, e=None, aspect_ratio='pad', num_frames=NUM_FRAMES, frame_idx=None):
     if isinstance(video_path, str):
         if s is not None and e is not None:
@@ -323,9 +209,15 @@ def process_video(video_path, processor, s=None, e=None, aspect_ratio='pad', num
             else:
                 frame_data = None
         else:
-            video_data = [Image.fromarray(frame) for frame in vreader.get_batch(sampled_frame_indices).asnumpy()]
+            try:
+                video_data = [Image.fromarray(frame) for frame in vreader.get_batch(sampled_frame_indices).asnumpy()]
+            except:
+                video_data = [Image.fromarray(frame) for frame in vreader.get_batch(sampled_frame_indices).numpy()]
             if frame_idx is not None:
-                frame_data = vreader.get_batch(frame_idx).asnumpy()
+                try:
+                    frame_data = vreader.get_batch(frame_idx).asnumpy()
+                except:
+                    frame_data = vreader.get_batch(frame_idx).numpy()
             else:
                 frame_data = None
 

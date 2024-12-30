@@ -12,7 +12,6 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 [![Dataset](https://img.shields.io/badge/Dataset-Comming_Soon-E59FB6)]() 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)]() 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)]() 
-[![Static Badge](https://img.shields.io/badge/Try_Demo-6B88E3?logo=youtubegaming&logoColor=DAE4EE)]() 
 [![Homepage](https://img.shields.io/badge/Homepage-visit-9DC3E6)]() 
 
 </div>
@@ -28,26 +27,12 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
   This demo integrates SAM 2 for visualization.
 </p>
 
+## 🎥 Video
+
+https://github.com/user-attachments/assets/3b91eafe-e807-40ee-aa45-8fb50b887571
+
 ## 📰 News
-* **[2024.12.xx]**  We Release the code of VideoRefer and the VideoRefer-Bench.
-
-
-<details open><summary>💡 Some other multimodal-LLM projects from our team may interest you ✨. </summary><p>
-<!--  may -->
-
-> [**Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding**](https://github.com/DAMO-NLP-SG/Video-LLaMA) <br>
-> Hang Zhang, Xin Li, Lidong Bing <br>
-[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/DAMO-NLP-SG/Video-LLaMA)  [![github](https://img.shields.io/github/stars/DAMO-NLP-SG/Video-LLaMA.svg?style=social)](https://github.com/DAMO-NLP-SG/Video-LLaMA) [![arXiv](https://img.shields.io/badge/Arxiv-2306.02858-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2306.02858) <br>
-
-> [**VideoLLaMA 2: Advancing Spatial-Temporal Modeling and Audio Understanding in Video-LLMs**](https://github.com/DAMO-NLP-SG/VideoLLaMA2) <br>
-> Zesen Cheng, Sicong Leng, Hang Zhang, Yifei Xin, Xin Li, Guanzheng Chen, Yongxin Zhu, Wenqi Zhang, Ziyang Luo, Deli Zhao, Lidong Bing <br>
-[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/DAMO-NLP-SG/VideoLLaMA2)  [![github](https://img.shields.io/github/stars/DAMO-NLP-SG/VideoLLaMA2.svg?style=social)](https://github.com/DAMO-NLP-SG/VideoLLaMA2) [![arXiv](https://img.shields.io/badge/Arxiv-2406.07476-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2406.07476) <br>
-
-> [**Osprey: Pixel Understanding with Visual Instruction Tuning**](https://github.com/CircleRadon/Osprey) <br>
-> Yuqian Yuan, Wentong Li, Jian Liu, Dongqi Tang, Xinjie Luo, Chi Qin, Lei Zhang, Jianke Zhu <br>
-[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/CircleRadon/Osprey)  [![github](https://img.shields.io/github/stars/CircleRadon/Osprey.svg?style=social)](https://github.com/CircleRadon/Osprey) [![arXiv](https://img.shields.io/badge/Arxiv-2312.10032-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2312.10032) <br>
-
-</p></details>
+* **[2025.1.1]**  We Release the code of VideoRefer and the VideoRefer-Bench.
 
 
 ## 🔍 About VideoRefer Suite 
@@ -98,6 +83,19 @@ pip install -r requirements.txt
 pip install flash-attn==2.5.8 --no-build-isolation
 ```
 
+## 🌟 Getting started
+
+Please refer to the examples in [infer.ipynb](./demo/infer.ipynb) for detailed instructions on how to use our model for single video inference, which supports both single-frame and multi-frame modes.
+
+For better usage, the demo integrates with [SAM2](), to get started, please install SAM2 first:
+
+```shell
+git clone https://github.com/facebookresearch/sam2.git && cd sam2
+
+SAM2_BUILD_CUDA=0 pip install -e ".[notebooks]"
+```
+Then, download [sam2.1_hiera_large.pt](https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt) to `checkpoints`.
+
 
 ## 🗝️ Training & Evaluation
 ### Training
@@ -143,6 +141,7 @@ https://github.com/user-attachments/assets/33757d27-56bd-4523-92da-8f5a58fe5c85
 - The usage of VideoRefer-Bench is detailed in [doc](./Benchmark.md).
 
 
+
 ## 📑 Citation
 
 If you find VideoRefer Suite useful for your research and applications, please cite using this BibTeX:
@@ -155,6 +154,24 @@ If you find VideoRefer Suite useful for your research and applications, please c
   url = {}
 }
 ```
+
+<details open><summary>💡 Some other multimodal-LLM projects from our team may interest you ✨. </summary><p>
+<!--  may -->
+
+> [**Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding**](https://github.com/DAMO-NLP-SG/Video-LLaMA) <br>
+> Hang Zhang, Xin Li, Lidong Bing <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/DAMO-NLP-SG/Video-LLaMA)  [![github](https://img.shields.io/github/stars/DAMO-NLP-SG/Video-LLaMA.svg?style=social)](https://github.com/DAMO-NLP-SG/Video-LLaMA) [![arXiv](https://img.shields.io/badge/Arxiv-2306.02858-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2306.02858) <br>
+
+> [**VideoLLaMA 2: Advancing Spatial-Temporal Modeling and Audio Understanding in Video-LLMs**](https://github.com/DAMO-NLP-SG/VideoLLaMA2) <br>
+> Zesen Cheng, Sicong Leng, Hang Zhang, Yifei Xin, Xin Li, Guanzheng Chen, Yongxin Zhu, Wenqi Zhang, Ziyang Luo, Deli Zhao, Lidong Bing <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/DAMO-NLP-SG/VideoLLaMA2)  [![github](https://img.shields.io/github/stars/DAMO-NLP-SG/VideoLLaMA2.svg?style=social)](https://github.com/DAMO-NLP-SG/VideoLLaMA2) [![arXiv](https://img.shields.io/badge/Arxiv-2406.07476-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2406.07476) <br>
+
+> [**Osprey: Pixel Understanding with Visual Instruction Tuning**](https://github.com/CircleRadon/Osprey) <br>
+> Yuqian Yuan, Wentong Li, Jian Liu, Dongqi Tang, Xinjie Luo, Chi Qin, Lei Zhang, Jianke Zhu <br>
+[![github](https://img.shields.io/badge/-Github-black?logo=github)](https://github.com/CircleRadon/Osprey)  [![github](https://img.shields.io/github/stars/CircleRadon/Osprey.svg?style=social)](https://github.com/CircleRadon/Osprey) [![arXiv](https://img.shields.io/badge/Arxiv-2312.10032-b31b1b.svg?logo=arXiv)](https://arxiv.org/abs/2312.10032) <br>
+
+</p></details>
+
 
 ## 👍 Acknowledgement
 The codebase of VideoRefer is adapted from [**VideoLLaMA 2**](https://github.com/DAMO-NLP-SG/VideoLLaMA2).

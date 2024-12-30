@@ -280,9 +280,7 @@ class LazySupervisedDataset(Dataset):
         video_processor = self.data_args.video_processor
 
         num_frames = NUM_FRAMES if self.data_args.num_frames is None else self.data_args.num_frames
-        # mask_frames = NUM_MASK_FRAMES if self.data_args.num_mask_frames is None else self.data_args.num_mask_frames
-        # region_token_num = REGION_TOKEN_NUM if self.data_args.region_token_num is None else self.data_args.region_token_num
-
+ 
         if isinstance(i, int):
             sources = [sources]
         assert len(sources) == 1, "Don't know why it is wrapped to a list"  # FIXME
@@ -320,21 +318,13 @@ class LazySupervisedDataset(Dataset):
                     for ann in sources[0]['annotation']:
                         frame_list = list(ann.keys())
                         indices = []
-                        # print("####frame list")
-                        # print(frame_list)
                         for frame in frame_list:
                             indices.append(all_frames.index(frame))
-                        # print(indices)
                         ann_indices.append(indices)
-                    # frame_nums.append(len(all_frames))
                 else: 
                     all_frames.add(0)
                     ann_indices.append([0])
-                    # frame_nums.append(1)
-                # print('###########all_frames')
-                # print(all_frames)
-                # print('##########ann_indices')
-                # print(ann_indices)
+
                 all_frames = [int(f) for f in all_frames]
                 video, frame, height, width = process_video(video_file, video_processor, aspect_ratio=self.data_args.image_aspect_ratio, num_frames=num_frames, frame_idx=all_frames) #frame [1,3,336,336]
             except Exception as e:
@@ -351,9 +341,8 @@ class LazySupervisedDataset(Dataset):
             sources = copy.deepcopy([e["conversations"] for e in sources])
 
         # print(sources)
-        # region mask
         masks = []
-        # multi frames
+
         if 'annotation' in self.list_data_dict[i]:
             if 'height' in self.list_data_dict[i]:
                 h = self.list_data_dict[i]['height']
@@ -362,19 +351,17 @@ class LazySupervisedDataset(Dataset):
                 h = None
                 w = None
 
-            if 'video' in self.list_data_dict[i]:
-                for anns in self.list_data_dict[i]['annotation']:
-                    for ann_idx in anns.keys():
-                        if anns[ann_idx]['segmentation'] is None:
-                            mask = np.zeros((height, width))
-                        else:
-                            mask = annToMask(anns[ann_idx]['segmentation'], h, w)
-                        masks.append(mask)
-            else:
-                ann_indices = [[0]]*len(self.list_data_dict[i]['annotation'])
-                for ann in self.list_data_dict[i]['annotation']:
-                    mask = annToMask(ann['segmentation'], h, w)
+            for anns in self.list_data_dict[i]['annotation']:
+                for ann_idx in anns.keys():
+                    if anns[ann_idx]['segmentation'] is None:
+                        mask = np.zeros((height, width))
+                    else:
+                        mask = annToMask(anns[ann_idx]['segmentation'], h, w)
                     masks.append(mask)
+                    
+            if 'image' in self.list_data_dict[i]::
+                ann_indices = [[0]]*len(self.list_data_dict[i]['annotation'])
+                
             masks = np.array(masks)      
         else:
             masks = np.zeros((1, 336, 336))
