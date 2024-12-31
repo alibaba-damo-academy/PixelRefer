@@ -10,9 +10,9 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 ![Static Badge](https://img.shields.io/badge/VideoRefer-v1-F7C97E) 
 [![arXiv preprint](https://img.shields.io/badge/arxiv-xxx-ECA8A7?logo=arxiv)]() 
 [![Dataset](https://img.shields.io/badge/Dataset-Comming_Soon-E59FB6)]() 
-[![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)]() 
-[![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)]() 
-[![Homepage](https://img.shields.io/badge/Homepage-visit-9DC3E6)]() 
+[![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) 
+[![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
+[![Homepage](https://img.shields.io/badge/Homepage-visit-9DC3E6)](https://damo-nlp-sg.github.io/VideoRefer/) 
 
 </div>
 
@@ -87,7 +87,7 @@ pip install flash-attn==2.5.8 --no-build-isolation
 
 Please refer to the examples in [infer.ipynb](./demo/infer.ipynb) for detailed instructions on how to use our model for single video inference, which supports both single-frame and multi-frame modes.
 
-For better usage, the demo integrates with [SAM2](), to get started, please install SAM2 first:
+For better usage, the demo integrates with [SAM2](https://github.com/facebookresearch/sam2), to get started, please install SAM2 first:
 
 ```shell
 git clone https://github.com/facebookresearch/sam2.git && cd sam2
@@ -125,9 +125,9 @@ For model evaluation, please refer to [eval](eval/eval.md).
 ## 🌏 Model Zoo
 | Model Name     | Visual Encoder | Language Decoder | # Training Frames |
 |:----------------|:----------------|:------------------|:----------------:|
-| [VideoRefer-7B]() | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
-| [VideoRefer-7B-stage2]()  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
-| [VideoRefer-7B-stage2.5]()  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
+| [VideoRefer-7B](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
+| [VideoRefer-7B-stage2](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B-stage2)  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
+| [VideoRefer-7B-stage2.5](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B-stage2.5)  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
 
 
 ## 🕹️ VideoRefer-Bench
@@ -136,7 +136,7 @@ For model evaluation, please refer to [eval](eval/eval.md).
 
 https://github.com/user-attachments/assets/33757d27-56bd-4523-92da-8f5a58fe5c85
 
-- The annotations of the benchmark can be found in [🤗benchmark]().
+- The annotations of the benchmark can be found in [🤗benchmark](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench).
 
 - The usage of VideoRefer-Bench is detailed in [doc](./Benchmark.md).
 
