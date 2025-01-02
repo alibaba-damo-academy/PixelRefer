@@ -33,6 +33,8 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 https://github.com/user-attachments/assets/6407e6c5-96b1-4ef0-8d00-fcd295f09184
 
+- HD video can be viewed on [YouTube](https://www.youtube.com/watch?v=gLNOj1OPFJE).
+
 ## 📰 News
 * **[2025.1.1]**  We Release the code of VideoRefer and the VideoRefer-Bench.
 
