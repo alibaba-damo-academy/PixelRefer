@@ -12,6 +12,8 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 [![Dataset](https://img.shields.io/badge/Dataset-Comming_Soon-E59FB6)]() 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
+
+[![video](https://img.shields.io/badge/Watch_Video-36600E?logo=youtube&logoColor=green)](https://www.youtube.com/watch?v=gLNOj1OPFJE)
 [![Homepage](https://img.shields.io/badge/Homepage-visit-9DC3E6)](https://damo-nlp-sg.github.io/VideoRefer/) 
 
 </div>
@@ -29,7 +31,7 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 ## 🎥 Video
 
-https://github.com/user-attachments/assets/3b91eafe-e807-40ee-aa45-8fb50b887571
+https://github.com/user-attachments/assets/6407e6c5-96b1-4ef0-8d00-fcd295f09184
 
 ## 📰 News
 * **[2025.1.1]**  We Release the code of VideoRefer and the VideoRefer-Bench.
