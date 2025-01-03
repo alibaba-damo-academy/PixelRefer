@@ -25,9 +25,6 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 <p align="center" style="margin-bottom: 5px;">
   VideoRefer can understand any object you're interested within a video.
 </p>
-<p align="center" style="margin-top: 5px;">
-  This demo integrates SAM 2 for visualization.
-</p>
 
 
 ## 📰 News
@@ -36,7 +33,7 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 ## 🎥 Video
 
-https://github.com/user-attachments/assets/6407e6c5-96b1-4ef0-8d00-fcd295f09184
+https://github.com/user-attachments/assets/d943c101-72f3-48aa-9822-9cfa46fa114b
 
 - HD video can be viewed on [YouTube](https://www.youtube.com/watch?v=gLNOj1OPFJE).
 
