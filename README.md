@@ -2,13 +2,13 @@
     <img src="assets/videorefer.png" width="80%" style="margin-bottom: 0.2;"/>
 <p>
 
-<h3 align="center"><a href="https://arxiv.org/abs/2406.07476" style="color:#4D2B24">
+<h3 align="center"><a href="http://arxiv.org/abs/2501.00599" style="color:#4D2B24">
 VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM</a></h3>
 
 <div align=center>
 
 ![Static Badge](https://img.shields.io/badge/VideoRefer-v1-F7C97E) 
-[![arXiv preprint](https://img.shields.io/badge/arxiv-xxx-ECA8A7?logo=arxiv)]() 
+[![arXiv preprint](https://img.shields.io/badge/arxiv-xxx-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
 [![Dataset](https://img.shields.io/badge/Dataset-Comming_Soon-E59FB6)]() 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
@@ -155,7 +155,7 @@ If you find VideoRefer Suite useful for your research and applications, please c
   author = {Yuqian Yuan, Hang Zhang, Wentong Li, Zesen Cheng, Boqiang Zhang, Long Li, Xin Li, Deli Zhao, Wenqiao Zhang, Yueting Zhuang, Jianke Zhu, Lidong Bing},
   journal={arXiv},
   year={2024},
-  url = {}
+  url = {http://arxiv.org/abs/2501.00599}
 }
 ```
 
