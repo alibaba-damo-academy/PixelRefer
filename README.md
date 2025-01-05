@@ -9,7 +9,7 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 ![Static Badge](https://img.shields.io/badge/VideoRefer-v1-F7C97E) 
 [![arXiv preprint](https://img.shields.io/badge/arxiv-2501.00599-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
-[![Dataset](https://img.shields.io/badge/Dataset-Comming_Soon-E59FB6)]() 
+[![Dataset](https://img.shields.io/badge/Dataset-Coming_Soon-E59FB6)]() 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
 
@@ -40,11 +40,11 @@ https://github.com/user-attachments/assets/d943c101-72f3-48aa-9822-9cfa46fa114b
 
 ## 🔍 About VideoRefer Suite 
 
-`VideoRefer Suite` is a suite designed to enhance the fine-grained spatial-temporal understanding capabilities of Video Large Language Models (Video LLMs). It consists of three primary components:
+`VideoRefer Suite` is designed to enhance the fine-grained spatial-temporal understanding capabilities of Video Large Language Models (Video LLMs). It consists of three primary components:
 
 * **Model (VideoRefer)**
 
-`VideoRefer` is an effective Video LLM, which enables fine-grained perceiving, reasoning and retrieval for user-defined regions at any specified timestamps. Supporting both single-frame and multi-frame region inputs.
+`VideoRefer` is an effective Video LLM, which enables fine-grained perceiving, reasoning, and retrieval for user-defined regions at any specified timestamps—supporting both single-frame and multi-frame region inputs.
 
 <p align="center">
     <img src="assets/model.png" width="90%" style="margin-bottom: 0.2;"/>
@@ -178,5 +178,5 @@ If you find VideoRefer Suite useful for your research and applications, please c
 
 ## 👍 Acknowledgement
 The codebase of VideoRefer is adapted from [**VideoLLaMA 2**](https://github.com/DAMO-NLP-SG/VideoLLaMA2).
-The LLM we used is Qwen2.
+The visual encoder and language decoder we used in VideoRefer are [**Siglip**](https://huggingface.co/google/siglip-so400m-patch14-384) and [**Qwen2**](https://huggingface.co/collections/Qwen/qwen2-6659360b33528ced941e557f), respectively.
 
