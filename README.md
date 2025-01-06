@@ -149,11 +149,11 @@ https://github.com/user-attachments/assets/33757d27-56bd-4523-92da-8f5a58fe5c85
 
 If you find VideoRefer Suite useful for your research and applications, please cite using this BibTeX:
 ```bibtex
-@article{yuan2024videorefersuite,
+@article{yuan2025videorefersuite,
   title = {VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM},
   author = {Yuqian Yuan, Hang Zhang, Wentong Li, Zesen Cheng, Boqiang Zhang, Long Li, Xin Li, Deli Zhao, Wenqiao Zhang, Yueting Zhuang, Jianke Zhu, Lidong Bing},
   journal={arXiv},
-  year={2024},
+  year={2025},
   url = {http://arxiv.org/abs/2501.00599}
 }
 ```
