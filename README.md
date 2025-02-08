@@ -141,8 +141,9 @@ https://github.com/user-attachments/assets/33757d27-56bd-4523-92da-8f5a58fe5c85
 
 - The annotations of the benchmark can be found in [🤗benchmark](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench).
 
-- The usage of VideoRefer-Bench is detailed in [doc](./Benchmark.md).
+- The usage of VideoRefer-Bench is detailed in [doc](./benchmark/README.md.md).
 
+- To evaluate general MLLMs on VideoRefer-Bench, please refer to [eval](./benchmark/evaluation_general_mllms.md).
 
 
 ## 📑 Citation

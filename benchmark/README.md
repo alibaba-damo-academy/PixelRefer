@@ -76,7 +76,7 @@ We use GPT-4o to evaluate this benchmark by assigning scores to the generated pr
 
 The evaluation code can be found in [videorefer/eval/videorefer_bench_d](videorefer/eval/videorefer_bench_d).
 
-
+> To evaluate other general MLLMs on the VideoRefer-Bench, please refer to [evluation.md](evaluation_general_mllms.md)
 
 ## VideoRefer-Bench-Q
 The benchmark is designed to evaluate the proficiency of MLLMs in interpreting video objects, including 1,000 high-quality multiple-choice questions.
@@ -112,7 +112,7 @@ Data structure:
 ```bash
 VideoRefer
 └── eval
-    └── VideoRefer-BenchQ
+    └── VideoRefer-Bench-Q
         ├── VideoRefer-Bench-Q.json
         ├── MeViS 
         |   ├── valid_u/ 
@@ -162,3 +162,5 @@ The data format organized in the benchmark json file is as below:
 
 - `frame_idx`: When using single-frame mask mode, we only use the single mask with the frame_idx.
 - All the segmentations are in `RLE` format.
+
+> To evaluate other general MLLMs on the VideoRefer-Bench, please refer to [evluation.md](evaluation_general_mllms.md)
