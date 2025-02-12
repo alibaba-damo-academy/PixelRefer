@@ -223,12 +223,40 @@ def process_video(video_path, processor, s=None, e=None, aspect_ratio='pad', num
 
     elif isinstance(video_path, np.ndarray):
         video_data = [Image.fromarray(f) for f in video_path]
+        frame_data = []
+        if frame_idx is not None:
+            for idx in frame_idx:
+                frame_data.append(video_data[idx])
+        else:
+            frame_data = None
+            
     elif isinstance(video_path, list) and isinstance(video_path[0], np.ndarray):
         video_data = [Image.fromarray(f) for f in video_path]
+        frame_data = []
+        if frame_idx is not None:
+            for idx in frame_idx:
+                frame = Image.fromarray(video_data[idx])
+                frame_data.append(np.array(frame))
+        else:
+            frame_data = None
+            
     elif isinstance(video_path, list) and isinstance(video_path[0], str):
         video_data = [Image.open(f) for f in video_path]
+        frame_data = []
+        if frame_idx is not None:
+            for idx in frame_idx:
+                frame = Image.open(video_data[idx]).convert('RGB')
+                frame_data.append(np.array(frame))
+        else:
+            frame_data = None
     elif isinstance(video_path, list) and isinstance(video_path[0], Image.Image):
         video_data = video_path
+        frame_data = []
+        if frame_idx is not None:
+            for idx in frame_idx:
+                frame_data.append(np.array(video_data[idx]))
+        else:
+            frame_data = None
     else:
         raise ValueError(f"Unsupported video path type: {type(video_path)}")
 
