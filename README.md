@@ -137,7 +137,6 @@ For model evaluation, please refer to [eval](eval/eval.md).
 The dataset can be accessed on [huggingface](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K).
 
 By leveraging our multi-agent data engine, we meticulously create three primary types of object-level video instruction data: 
-VideoRefer consists of three types of data:
 - Object-level Detailed Caption
 - Object-level Short Caption
 - Object-level QA
