@@ -28,6 +28,7 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 
 ## 📰 News
+* **[2025.2.18]**  We Release the [VideoRefer-700K dataset](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) on HuggingFace.
 * **[2025.1.1]**  We Release the code of VideoRefer and the VideoRefer-Bench.
 
 
@@ -132,6 +133,66 @@ For model evaluation, please refer to [eval](eval/eval.md).
 | [VideoRefer-7B-stage2](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B-stage2)  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
 | [VideoRefer-7B-stage2.5](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B-stage2.5)  | [siglip-so400m-patch14-384](https://huggingface.co/google/siglip-so400m-patch14-384) | [Qwen2-7B-Instruct](https://huggingface.co/Qwen/Qwen2-7B-Instruct)  | 16 |
 
+## 🖨️ VideoRefer-700K
+The dataset can be accessed on [huggingface](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K).
+
+By leveraging our multi-agent data engine, we meticulously create three primary types of object-level video instruction data: 
+VideoRefer consists of three types of data:
+- Object-level Detailed Caption
+- Object-level Short Caption
+- Object-level QA
+
+Video sources:
+- Detailed&Short Caption
+    - [Panda-70M](https://snap-research.github.io/Panda-70M/). 
+- QA
+    - [MeViS](https://codalab.lisn.upsaclay.fr/competitions/15094)
+    - [A2D](https://web.eecs.umich.edu/~jjcorso/r/a2d/index.html#downloads)
+    - [Youtube-VOS](https://competitions.codalab.org/competitions/29139#participate-get_data)
+
+Data format:
+```json
+[
+    {
+        "video": "videos/xxx.mp4",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhat is the relationship of <region> and <region>?"
+            },
+            {
+                "from": "gpt",
+                "value": "...."
+            },
+            ...
+        ],
+        "annotation":[
+            //object1
+            {
+                "frame_idx":{
+                    "segmentation": {
+                        //rle format or polygon
+                    }
+                }
+                "frame_idx":{
+                    "segmentation": {
+                        //rle format or polygon
+                    }
+                }
+            },
+            //object2
+            {
+                "frame_idx":{
+                    "segmentation": {
+                        //rle format or polygon
+                    }
+                }
+            },
+            ...
+        ]
+
+    }
+```
 
 ## 🕹️ VideoRefer-Bench
 
