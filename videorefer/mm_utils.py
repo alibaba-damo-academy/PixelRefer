@@ -245,7 +245,7 @@ def process_video(video_path, processor, s=None, e=None, aspect_ratio='pad', num
         frame_data = []
         if frame_idx is not None:
             for idx in frame_idx:
-                frame = Image.open(video_data[idx]).convert('RGB')
+                frame =video_data[idx].convert('RGB')
                 frame_data.append(np.array(frame))
         else:
             frame_data = None
