@@ -9,7 +9,7 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 ![Static Badge](https://img.shields.io/badge/VideoRefer-v1-F7C97E) 
 [![arXiv preprint](https://img.shields.io/badge/arxiv-2501.00599-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
-[![Dataset](https://img.shields.io/badge/Dataset-Coming_Soon-E59FB6)]() 
+[![Dataset](https://img.shields.io/badge/Dataset-Hugging_Face-E59FB6)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
 
