@@ -28,9 +28,10 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 
 
 ## 📰 News
+* **[2025.4.22]** 🔥Our VideoRefer-Bench has been adopted in [Describe Anything Model](https://arxiv.org/pdf/2504.16072) (NVIDIA & UC Berkeley).
 * **[2025.2.27]** 🔥VideoRefer Suite has been accepted to CVPR2025!
-* **[2025.2.18]**  🔥We Release the [VideoRefer-700K dataset](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) on HuggingFace.
-* **[2025.1.1]**  🔥We Release the code of VideoRefer and the VideoRefer-Bench.
+* **[2025.2.18]**  🔥We release the [VideoRefer-700K dataset](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) on HuggingFace.
+* **[2025.1.1]**  🔥We release the code of VideoRefer and the VideoRefer-Bench.
 
 
 ## 🎥 Video
