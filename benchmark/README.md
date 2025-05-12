@@ -74,7 +74,7 @@ The data format organized in the benchmark json file is as below:
 ### Evaluation
 We use GPT-4o to evaluate this benchmark by assigning scores to the generated predictions on a scale from 0 to 5 across four dimensions.
 
-The evaluation code can be found in [videorefer/eval/videorefer_bench_d](videorefer/eval/videorefer_bench_d).
+The evaluation code can be found in [videorefer/eval/videorefer_bench_d](../videorefer/eval/videorefer_bench_d).
 
 > To evaluate other general MLLMs on the VideoRefer-Bench, please refer to [evluation.md](evaluation_general_mllms.md)
 
