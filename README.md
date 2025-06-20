@@ -47,7 +47,13 @@ The demo is hosted on [Huggingface Spaces](https://huggingface.co/spaces/lixin4e
 
 ## 🔍 About VideoRefer Suite 
 
-`VideoRefer Suite` is designed to enhance the fine-grained spatial-temporal understanding capabilities of Video Large Language Models (Video LLMs). It consists of three primary components:
+`VideoRefer Suite` is designed to enhance the fine-grained spatial-temporal understanding capabilities of Video Large Language Models (Video LLMs). 
+
+<p align="center">
+    <img src="assets/compare.png" width="100%" style="margin-bottom: 0.2;"/>
+<p>
+
+It consists of three primary components:
 
 * **Model (VideoRefer)**
 
