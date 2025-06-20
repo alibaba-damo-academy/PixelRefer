@@ -35,6 +35,15 @@ VideoRefer Suite: Advancing Spatial-Temporal Object Understanding with Video LLM
 * **[2025.2.18]**  🔥We release the [VideoRefer-700K dataset](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) on HuggingFace.
 * **[2025.1.1]**  🔥We release [VideoRefer](./videorefer/), including [VideoRefer-7B](https://huggingface.co/DAMO-NLP-SG/VideoRefer-7B) model, the code of VideoRefer and the [VideoRefer-Bench](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench).
 
+## 🚀 Performance
+Performance on both image and video benchmarks.
+<p align="center">
+    <img src="assets/compare.png" width="100%" style="margin-bottom: 0.2;"/>
+<p>
+
+## 🤗 Huggingface Demo
+The demo is hosted on [Huggingface Spaces](https://huggingface.co/spaces/lixin4ever/VideoRefer-VideoLLaMA3/).
+
 
 ## 🎥 Video
 
@@ -42,17 +51,10 @@ https://github.com/user-attachments/assets/d943c101-72f3-48aa-9822-9cfa46fa114b
 
 - HD video can be viewed on [YouTube](https://www.youtube.com/watch?v=gLNOj1OPFJE).
 
-## 🤗 Huggingface Demo
-The demo is hosted on [Huggingface Spaces](https://huggingface.co/spaces/lixin4ever/VideoRefer-VideoLLaMA3/).
 
 ## 🔍 About VideoRefer Suite 
 
 `VideoRefer Suite` is designed to enhance the fine-grained spatial-temporal understanding capabilities of Video Large Language Models (Video LLMs). 
-
-<p align="center">
-    <img src="assets/compare.png" width="100%" style="margin-bottom: 0.2;"/>
-<p>
-
 It consists of three primary components:
 
 * **Model (VideoRefer)**
