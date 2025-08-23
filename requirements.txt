@@ -24,7 +24,7 @@ pysubs2
 ffmpeg-python
 # misc
 scikit-learn==1.2.2
-huggingface_hub==0.23.4
+huggingface_hub
 sentencepiece==0.1.99
 shortuuid
 einops==0.6.1
