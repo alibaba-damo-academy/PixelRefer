@@ -122,7 +122,35 @@ In the current version, we only support `sinlge mask` per object. Please organiz
             ...
         ]
 
+    },
+    {
+        "image": "images/xxx.jpg",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<image>\nWhat is the relationship of <region> and <region>?"
+            },
+            {
+                "from": "gpt",
+                "value": "...."
+            },
+            ...
+        ],
+        "masks":[
+            //object1
+            {
+                //rle format or polygon
+            },
+            //object2
+            {
+                 //rle format or polygon
+            },
+            ...
+        ],
+        "width": xx, //necessary for polygon
+        "height": xx, //necessary for polygon
     }
+]
 ```
 
 ## ✅ Evaluation
