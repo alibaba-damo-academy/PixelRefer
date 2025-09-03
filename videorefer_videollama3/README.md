@@ -89,6 +89,42 @@ cd demo
 python app.py
 ```
 
+## 🚀Training
+In the current version, we only support `sinlge mask` per object. Please organize the training data in the following format:
+```json
+[
+    {
+        "video": "videos/xxx.mp4",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhat is the relationship of <region> and <region>?"
+            },
+            {
+                "from": "gpt",
+                "value": "...."
+            },
+            ...
+        ],
+        "masks":[
+            //object1
+            {
+                "frame_idx":{
+                    //rle format or polygon
+                }
+            },
+            //object2
+            {
+                "frame_idx":{
+                    //rle format or polygon
+                }
+            },
+            ...
+        ]
+
+    }
+```
+
 ## ✅ Evaluation
 
 ### Image
