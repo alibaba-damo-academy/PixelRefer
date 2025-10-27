@@ -54,6 +54,13 @@ Frameworks of two complementary paradigms for region-level representations:
 <p>
 
 
+## 🌏 Model Zoo
+| Model Name      | Visual Encoder | Language Decoder | 
+|:----------------|:----------------|:------------------|
+| [PixelRefer-7B](https://huggingface.co/Alibaba-DAMO-Academy/PixelRefer-7B) | [VL3-SigLIP-NaViT](https://huggingface.co/DAMO-NLP-SG/VL3-SigLIP-NaViT) | [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) |
+| [PixelRefer-2B](https://huggingface.co/Alibaba-DAMO-Academy/PixelRefer-2B) | [VL3-SigLIP-NaViT](https://huggingface.co/DAMO-NLP-SG/VL3-SigLIP-NaViT) | [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
+| [PixelRefer-Lite-7B](https://huggingface.co/Alibaba-DAMO-Academy/PixelRefer-Lite-7B) | [VL3-SigLIP-NaViT](https://huggingface.co/DAMO-NLP-SG/VL3-SigLIP-NaViT) | [Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) |
+| [PixelRefer-Lite-2B](https://huggingface.co/Alibaba-DAMO-Academy/PixelRefer-Lite-2B) | [VL3-SigLIP-NaViT](https://huggingface.co/DAMO-NLP-SG/VL3-SigLIP-NaViT) | [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
 
 
 ## 👾 Quick Start
