@@ -2,13 +2,13 @@
     <img src="./assets/pixelrefer.png" width="60%" style="margin-bottom: 0.2;"/>
 <p>
 
-<h3 align="center"><a href="http://arxiv.org/abs/2501.00599" style="color:#4D2B24">
+<h3 align="center"><a href="http://arxiv.org/abs/2510.23603" style="color:#4D2B24">
 PixelRefer: A Unified Framework for Spatio-Temporal Object Referring with Arbitrary Granularity</a></h3>
 
 <div align=center>
 
 ![Static Badge](https://img.shields.io/badge/PixelRefer-v1-F7C97E) 
-[![arXiv preprint](https://img.shields.io/badge/arxiv-2501.00599-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
+[![arXiv preprint](https://img.shields.io/badge/arxiv-2510.23603-ECA8A7?logo=arxiv)](https://arxiv.org/abs/2510.23603) 
 [![Dataset](https://img.shields.io/badge/Dataset-Hugging_Face-E59FB6)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) 
 [![Model](https://img.shields.io/badge/Model-Hugging_Face-CFAFD4)](https://huggingface.co/collections/Alibaba-DAMO-Academy/pixelrefer) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 

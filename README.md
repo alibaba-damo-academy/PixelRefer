@@ -5,7 +5,7 @@
 <div align=center>
 
 ![Static Badge](https://img.shields.io/badge/PixelRefer-Family-F7C97E) 
-[![arXiv preprint](https://img.shields.io/badge/pixelrefer-2501.00599-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
+[![arXiv preprint](https://img.shields.io/badge/pixelrefer-2510.23603-ECA8A7?logo=arxiv)](https://arxiv.org/abs/2510.23603) 
 [![arXiv preprint](https://img.shields.io/badge/videorefer-2501.00599-ECA8A7?logo=arxiv)](http://arxiv.org/abs/2501.00599) 
 [![Dataset](https://img.shields.io/badge/Dataset-Hugging_Face-E59FB6)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-700K) 
 [![Benchmark](https://img.shields.io/badge/Benchmark-Hugging_Face-96D03A)](https://huggingface.co/datasets/DAMO-NLP-SG/VideoRefer-Bench) 
