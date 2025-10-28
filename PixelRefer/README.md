@@ -167,7 +167,7 @@ Trining Data Structure:
 ```
 
 ### PixelRefer
-We provide our training data in [stage1.json]() and [stage2.json]().
+We provide our training data in [stage1.json](https://huggingface.co/datasets/Alibaba-DAMO-Academy/PixelRefer-TrainingData/resolve/main/PixelRefer_stage1_trainingdata.json?download=true) and [stage2.json](https://huggingface.co/datasets/Alibaba-DAMO-Academy/PixelRefer-TrainingData/resolve/main/PixelRefer_stage2_trainingdata.json?download=true).
 
 In the current version, we only support `sinlge mask` per object. Please organize the training data in the following format:
 ```json
@@ -233,7 +233,7 @@ In the current version, we only support `sinlge mask` per object. Please organiz
 ```
 
 ### PixelRefer-Lite
-We provide our training data in [stage1.json]() and [stage2.json]().
+We provide our training data in [stage1.json](https://huggingface.co/datasets/Alibaba-DAMO-Academy/PixelRefer-TrainingData/resolve/main/PixelRefer-Lite_stage1_trainingdata.json?download=true) and [stage2.json](https://huggingface.co/datasets/Alibaba-DAMO-Academy/PixelRefer-TrainingData/resolve/main/PixelRefer-Lite_stage2_trainingdata.json?download=true).
 
 For PixelRefer-Lite, `multiple masks` per object are provided. 
 
